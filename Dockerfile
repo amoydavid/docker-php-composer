@@ -26,7 +26,7 @@ RUN apk add --no-cache gettext libpng libmcrypt sqlite libxml2 libjpeg-turbo fre
     apk del .build-dependencies && \
     docker-php-source delete
 
-RUN wget https://dl.laravel-china.org/composer.phar -O /usr/local/bin/composer && \
+RUN wget https://mirrors.aliyun.com/composer/composer.phar -O /usr/local/bin/composer && \
     chmod a+x /usr/local/bin/composer && \
     mkdir -p /home/composer/.composer && \
     ln -s /root/.ssh /home/composer/.ssh 
