@@ -6,7 +6,7 @@ ENV TIMEZONE=Asia/Shanghai
 RUN sed 's/http:\/\/dl-cdn.alpinelinux.org/https:\/\/mirrors.aliyun.com/g' -i /etc/apk/repositories
 
 
-RUN apk add --no-cache gettext libpng libmcrypt sqlite libxml2 libjpeg-turbo freetype libmemcached zlib && \
+RUN apk add --no-cache git wget gettext libpng libmcrypt sqlite libxml2 libjpeg-turbo freetype libmemcached zlib && \
     apk add --no-cache --virtual .build-dependencies libxml2-dev sqlite-dev zlib-dev \
     libmcrypt-dev gettext-dev curl-dev freetype-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libpng-dev libmemcached-dev && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ && \
